@@ -1,5 +1,5 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore.Migrations;
+﻿using Microsoft.EntityFrameworkCore.Migrations;
+using System;
 
 namespace API.Data.Migrations
 {
@@ -40,7 +40,7 @@ namespace API.Data.Migrations
                 nullable: true);
 
             migrationBuilder.AddColumn<string>(
-                name: "Intrerests",
+                name: "Interests",
                 table: "Users",
                 type: "TEXT",
                 nullable: true);
@@ -118,7 +118,7 @@ namespace API.Data.Migrations
                 table: "Users");
 
             migrationBuilder.DropColumn(
-                name: "Intrerests",
+                name: "Interests",
                 table: "Users");
 
             migrationBuilder.DropColumn(

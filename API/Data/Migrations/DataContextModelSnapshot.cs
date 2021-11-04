@@ -40,6 +40,9 @@ namespace API.Data.Migrations
                     b.Property<string>("Intrerests")
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("Introduction")
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("KnownAs")
                         .HasColumnType("TEXT");
 
