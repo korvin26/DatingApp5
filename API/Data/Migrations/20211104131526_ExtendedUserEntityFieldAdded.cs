@@ -6,11 +6,6 @@ namespace API.Data.Migrations
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.RenameColumn(
-                name: "Intrerests",
-                table: "Users",
-                newName: "Interests");
-
             migrationBuilder.AddColumn<string>(
                 name: "Introduction",
                 table: "Users",
@@ -20,9 +15,7 @@ namespace API.Data.Migrations
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropColumn(
-                name: "Intrerests",
-                table: "Users");
+
 
         }
     }
