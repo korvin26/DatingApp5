@@ -21,13 +21,13 @@ namespace API.Helpers
             }
 
             var userId = result.HttpContext.User.GetUserId();
-            var repo = result.HttpContext.RequestServices.GetService<IUserRepository>();
+            var unitOfWork = result.HttpContext.RequestServices.GetService<IUnitOfWork>();
 
-            if (repo == null) return;
+            if (unitOfWork == null) return;
 
-            var user = await repo.GetUserByIdAsync(userId);
-            user.LastActive = DateTime.Now;
-            await repo.SaveAllAsync();
+            var user = await unitOfWork.UserRepository.GetUserByIdAsync(userId);
+            user.LastActive = DateTime.UtcNow;
+            await unitOfWork.Complete();
 
             return;
         }

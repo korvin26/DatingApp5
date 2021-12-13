@@ -77,7 +77,6 @@ export class MessageService {
 
   async sendMessage(username: string, content: string) {
     return await this.hubConnection.invoke('SendMessage', { recipientUserName: username, content })
-      .then(responce => console.log(responce + "    " + content))
       .catch(error => console.log(error));
   }
 
