@@ -1,1 +1,27 @@
-<p>photo-management works!</p>
+<div class='row'>
+    <div class='col-sm-2' *ngFor='let photo of photos'>
+        <h4>{{photo.username}}</h4>
+        <img src='{{photo.url}}' class='img-thumbnail p-1' alt='{{photo.username}}'>
+        <div class='text-center'>
+            <button class='btn btn-sm btn-success mr-1' (click)='approvePhoto(photo.id)'>Approve</button>
+            <button class='btn btn-sm btn-danger' (click)='rejectPhoto(photo.id)'>Reject</button>
+        </div>
+    </div>
+</div>
+<!--
+<div class="row">
+    <ul #scrollMe style="overflow: scroll; height: 500px;" [scrollTop]="scrollMe.scrollHeight" class="chat">
+        <li *ngFor="let photo of photos">
+            <div class="col-2">
+                <img src="{{photo.url}}" alt="{{photo.url}}" class="img-thumbnail p-1">
+                <div class="text-center">
+                    <button (click)="approvePhoto(photo.id)" class="btn-outline-success">Approve</button>
+                    <button (click)="rejectPhoto(photo.id)" class="btn btn-sm btn-danger"><i
+                            class="fa fa-trash"></i>Reject</button>
+                    <p>User: {{photo.username}}, photo id: {{photo.id}}</p>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>
+-->
